@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  oracle:
+    image: container-registry.oracle.com/database/free:latest
+    container_name: proyecto2
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=Pro123
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - oracle-config:/opt/oracle/config
+      -  ./bulk:/home/oracle/bulk
+    networks:
+      - oracle-network
+
+volumes:
+  oracle-data:
+  oracle-config:
+
+networks:
+  oracle-network:
