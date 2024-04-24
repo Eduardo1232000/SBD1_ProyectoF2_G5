@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A553FF49-7670-C54F-4065-BDF16DF0D208" name="Carrera">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:03:05 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CodigoCarrera" id="BC987AF5-D026-7888-A092-409AF5CEB2D0">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:37:35 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="26E86081-C0B7-333F-5B6C-EAB9F7CA4A82">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:37:44 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0C25E0DC-9BC3-ABF2-50F9-470E35B93B70" name="Carrera PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:38:01 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BC987AF5-D026-7888-A092-409AF5CEB2D0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

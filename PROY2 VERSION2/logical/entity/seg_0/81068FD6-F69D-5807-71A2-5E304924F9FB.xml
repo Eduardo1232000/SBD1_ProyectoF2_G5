@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="81068FD6-F69D-5807-71A2-5E304924F9FB" name="salon">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:11:25 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Edificio" id="129D606E-3A80-F1CC-B4F0-CACEBF18F7E7">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 17:02:15 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Salon" id="3A13171A-7E4E-081D-C355-B11164DCEAF1">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:55:08 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CapacidadSalon" id="137FB260-9921-DB93-7CBA-0BD4C884520A">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:55:20 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="35AA861C-C247-3DA1-1E83-CD2153C6EBA4" name="salon PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:55:17 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3A13171A-7E4E-081D-C355-B11164DCEAF1</attributeRef>
+<attributeRef>129D606E-3A80-F1CC-B4F0-CACEBF18F7E7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

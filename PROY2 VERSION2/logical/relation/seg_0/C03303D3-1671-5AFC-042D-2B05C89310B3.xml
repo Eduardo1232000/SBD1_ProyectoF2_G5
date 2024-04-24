@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Pensum Curso FK" directorySegmentName="seg_0" id="C03303D3-1671-5AFC-042D-2B05C89310B3">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:45:22 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>4E5E3CD5-BD1E-F947-C584-5BAE57DCB8D4</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BD789190-AE81-1BF5-539D-23068728D4EE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>58C2F35B-D39B-75DF-DB05-FE40EF1547F8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

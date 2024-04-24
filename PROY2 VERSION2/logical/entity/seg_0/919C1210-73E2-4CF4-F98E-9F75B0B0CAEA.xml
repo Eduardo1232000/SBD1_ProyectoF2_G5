@@ -1,0 +1,196 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="919C1210-73E2-4CF4-F98E-9F75B0B0CAEA" name="Estudiante">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:03:11 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NoCarne" id="ABFC4640-A3E7-519C-E79E-7B6250E31AFE">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:43:50 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombres" id="BC2864B9-2E04-98F7-E1D1-3B3D0622644D">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:44:07 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SegundoNombre" id="C7370A4B-0ED9-FC89-1121-E76126050CE0">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:45:10 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellidos" id="C4BD8CB9-E5AB-319D-3BD1-B8C03CFDB6BA">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:45:52 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SegundoApellido" id="06B21E9B-19D6-D38F-D454-38EA19F324B2">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:46:39 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IngresoFamiliar" id="ADC059A4-0C0D-4CF7-5A22-14F7356F2CDD">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:47:06 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaNacimiento" id="470C87FF-E60D-365D-A369-3607D9860E10">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:48:01 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="creditos" id="3DFE36B1-D8FB-5565-13F6-4FD0F0D4AF07">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 20:55:41 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Correo" id="D1E4F9B8-E8AD-1CB1-4D00-431223F97D99">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 20:57:45 UTC</createdTime>
+<generatorID>0FC61811-6CB2-5C25-9FD8-F9DDEC7656B8</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefono" id="E5F41A58-7D81-12AE-34EF-D923FAACF0B3">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 20:57:45 UTC</createdTime>
+<generatorID>2F4546E0-5D30-93D2-9C91-67ECF7253384</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="ABB79600-C1AA-6CB9-A332-3B9605D0DBD5">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 20:57:45 UTC</createdTime>
+<generatorID>6558F3CD-A030-736F-6C7E-1D97817F1F8D</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DPI CUI" id="D3530676-2A79-B55D-5528-CD2FA15EF083">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 20:57:45 UTC</createdTime>
+<generatorID>0FF4D460-6D71-C85C-3376-8854E327AE35</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="ECAE1D60-C5E9-671E-112C-721F719AA999" name="Estudiante PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:44:05 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>ABFC4640-A3E7-519C-E79E-7B6250E31AFE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

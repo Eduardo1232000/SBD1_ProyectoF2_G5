@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5D247BB0-7567-1198-A71D-4459B62C9C24" name="Inscrito">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>966EE456-0F1A-1EB5-D4C5-7EB6C0DEAFDD</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Carrera_CodigoCarrera" id="7B7EE2D6-ADFF-6214-9541-887D4418D0CF">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>287ADCEC-08AB-6AC1-8C53-364CFBED7EFB</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9F753C57-FA98-BD77-2314-47DA4E39DCCC" referredColumn="D3D91130-68D6-E436-F294-A2DCCFEC19A4"/>
+</associations>
+</Column>
+<Column name="Estudiante_NoCarne" id="A5BECBE9-9F15-C898-69D5-441A3B777F1D">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>41806B80-8B16-74B4-8526-15D8FAA31E77</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D86BFF97-8154-5570-FE99-F467E6AB9BE0" referredColumn="6132DB5E-9E0B-A3D4-6F2F-C519C43335F0"/>
+</associations>
+</Column>
+<Column name="FechaInscripcion" id="D9E6AF85-1753-F5CB-E122-064C6A40CD0A">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>3C70BAF9-FABA-45B3-4BF3-24D265AA71C2</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BF673C49-0AF4-B7B4-844E-73B563DE47B5" name="Inscrito_PK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>D68494C9-2ECC-3F31-2EA2-03E8784B7DF7</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5BECBE9-9F15-C898-69D5-441A3B777F1D"/>
+<colUsage columnID="7B7EE2D6-ADFF-6214-9541-887D4418D0CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F49C1FFC-1193-CCFD-2BCC-1A525C2B31CB" name="Inscrito_Carrera_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>EBA2F977-8B8A-CA63-2102-D3998D3E63E5</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B7EE2D6-ADFF-6214-9541-887D4418D0CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="432F8996-2323-9C8E-8533-83370EC89F84" name="Inscrito_Estudiante_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>928888BC-73A0-8F9A-F847-3A07F9D03DE4</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5BECBE9-9F15-C898-69D5-441A3B777F1D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

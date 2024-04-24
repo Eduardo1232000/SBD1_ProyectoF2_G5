@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4EB8ED6C-1DF5-BC05-5D1C-550327C6B16B" name="CursoPrerrequisito">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>E07927F0-E8FD-F537-BE38-CDE84F413FB4</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Pensum_CodigoCarrera" id="FC0C6A45-C927-4C99-52F1-618C3AAD7268">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>DA8288CA-BF78-1D1C-3616-A379E6131EBE</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="02EEA46A-7813-9660-50C5-563F3365DC01" referredColumn="07B55B6A-E834-9411-2068-9F209C422FCE"/>
+</associations>
+</Column>
+<Column name="Pensum_Plan" id="639278D6-2D33-F556-11FA-FAC9C15EBC00">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>C719D552-EE92-3E00-BA81-5E7545FA3B5D</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="02EEA46A-7813-9660-50C5-563F3365DC01" referredColumn="E4F4310E-4ED7-91F4-CC89-97A75D9B125E"/>
+</associations>
+</Column>
+<Column name="Curso_CodigoCurso" id="D61E5C9C-25BE-1703-C5CE-20B3F78A7230">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>80305923-A9A7-8E61-250E-3DF6A61C1B2D</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0213F938-DF5E-94E3-4CBF-8B8390F53A50" referredColumn="4CF97F65-86B7-2F2B-52B7-70A35DB0A118"/>
+</associations>
+</Column>
+<Column name="Pensum_CodigoCurso" id="75EBCAF4-75D1-D015-722D-416F6943AF2A">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>2B0B217D-F7C1-5585-5647-81F494374FD8</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="02EEA46A-7813-9660-50C5-563F3365DC01" referredColumn="41CAD015-4994-EDE1-4AB9-3E84AB8FEAF2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="693531AD-1561-A07A-B358-9983C741EB06" name="CursoPrerrequisito_PK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>6824C78B-A9FD-5B1A-18EB-74697477F498</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC0C6A45-C927-4C99-52F1-618C3AAD7268"/>
+<colUsage columnID="639278D6-2D33-F556-11FA-FAC9C15EBC00"/>
+<colUsage columnID="D61E5C9C-25BE-1703-C5CE-20B3F78A7230"/>
+<colUsage columnID="75EBCAF4-75D1-D015-722D-416F6943AF2A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A6D54B0C-060E-5F7E-E7D5-09BB63374D0A" name="CursoPrerrequisito_Curso_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>702A5AF5-1807-F6D0-7F80-AAB1E00E9720</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D61E5C9C-25BE-1703-C5CE-20B3F78A7230"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="873B6FE7-A96B-DE79-F6BB-FA7768C8DBE5" name="CursoPrerrequisito_Pensum_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>48CBFE89-A92A-F931-02C4-2A9CA9E3DEC7</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75EBCAF4-75D1-D015-722D-416F6943AF2A"/>
+<colUsage columnID="639278D6-2D33-F556-11FA-FAC9C15EBC00"/>
+<colUsage columnID="FC0C6A45-C927-4C99-52F1-618C3AAD7268"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

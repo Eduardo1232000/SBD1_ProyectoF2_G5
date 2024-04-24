@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C0D4F95A-D6ED-AC84-2B4C-E5889622A98F" name="Plan">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>D457C449-F242-15C7-41A0-ECD709F4B9A9</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Plan" id="5B31BFE6-1293-BA17-12C1-87C75924964A">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>09F11513-E6BE-ECFC-DB39-A8F73BC50BB2</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Carrera_CodigoCarrera" id="F788269B-9A47-ADB1-4128-049508206A8C">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>BBF4F78F-BEA3-4964-812B-C08D7E09F1D4</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D3924C83-22EB-4C25-05A2-01C50342A9B3" referredColumn="D3D91130-68D6-E436-F294-A2DCCFEC19A4"/>
+</associations>
+</Column>
+<Column name="Nombre" id="928C39BA-798A-738F-A9F1-D5BEB9D54D1A">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>5A12879C-1A8C-6EF8-7FB3-F32497D0A76B</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Yearinicio" id="69FC0207-5F1C-7657-C4A5-EF69F2366624">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>16FFB314-C837-FC67-6E03-47E9E2EDB544</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CicloInicial" id="FC7A765B-B4E5-5EB6-03B8-FAA88BE303D6">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>B4F3B030-2B80-2EE5-6443-86C0436A0F02</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Yearfin" id="1354EF82-2BD9-D130-4905-A122CCDE8F21">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>36B0C7C4-05A0-FB14-414B-9B6112196301</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CicloFinal" id="076F25DB-241B-E236-3D2E-7AD6E61AB3A6">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>2611CECE-27D2-E11F-E93C-B44D7945A578</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreditosCierre" id="834BAC80-BEF3-8615-BA05-7E376D0978DA">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>FE739CB7-3D2E-E94B-FE86-576E96F2765B</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA5BD465-EA0D-1453-1F8C-01EB5A66016D" name="Plan_PK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>D156DA07-2765-1A50-F8CE-8B63E5394AC8</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B31BFE6-1293-BA17-12C1-87C75924964A"/>
+<colUsage columnID="F788269B-9A47-ADB1-4128-049508206A8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3CA9F14-4081-1B5E-C475-ED8BDDDA578D" name="Plan_Carrera_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>F283B3EC-E516-E154-DD4A-2F06B5EEAD9F</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F788269B-9A47-ADB1-4128-049508206A8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

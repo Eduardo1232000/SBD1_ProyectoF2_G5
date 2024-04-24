@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Plan Carrera FK" directorySegmentName="seg_0" id="F283B3EC-E516-E154-DD4A-2F06B5EEAD9F">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:44:20 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>0C25E0DC-9BC3-ABF2-50F9-470E35B93B70</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A553FF49-7670-C54F-4065-BDF16DF0D208</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D457C449-F242-15C7-41A0-ECD709F4B9A9</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

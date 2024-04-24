@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="94A0C4B5-3A86-A375-D19E-7CF5571EB33C" name="Pensum">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>58C2F35B-D39B-75DF-DB05-FE40EF1547F8</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Curso_CodigoCurso" id="41CAD015-4994-EDE1-4AB9-3E84AB8FEAF2">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>4302EB63-8598-4689-2AB8-27A46F69AE7E</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="33F2503A-4AF0-016B-28F6-57FD636ED230" referredColumn="4CF97F65-86B7-2F2B-52B7-70A35DB0A118"/>
+</associations>
+</Column>
+<Column name="Plan_Plan" id="E4F4310E-4ED7-91F4-CC89-97A75D9B125E">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>3A014DD6-863B-4712-BEDF-9F63881B4C4C</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3EEAAAF9-536E-71F3-1F60-237F79CC6B82" referredColumn="5B31BFE6-1293-BA17-12C1-87C75924964A"/>
+</associations>
+</Column>
+<Column name="Plan_CodigoCarrera" id="07B55B6A-E834-9411-2068-9F209C422FCE">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>2F0C8F4E-4636-62D6-C9B0-8705181D5211</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3EEAAAF9-536E-71F3-1F60-237F79CC6B82" referredColumn="F788269B-9A47-ADB1-4128-049508206A8C"/>
+</associations>
+</Column>
+<Column name="Obligatorio" id="DB621A9C-6728-044B-9F8D-AA65BC0C2ACB">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>C218CDA8-DBD5-3803-61F6-A05B67EC3378</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Creditos" id="8BE3152D-DBC1-96B6-38E7-4308AAD7A373">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>E7F72B78-E40C-ED01-7774-E4E590AC4C85</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NotaAprobacion" id="FD0401B0-9756-85EE-662C-A4814E8DA18A">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>5919C4C3-B8C9-E470-1B56-60389D775131</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Zonaminima" id="78EB6617-AE7D-A5D4-2A12-E09365D81837">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>97C3A4A5-479E-3F0C-59CE-220FE44A4460</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreditosPrerrequisito" id="3D47BF31-5033-BABB-0D7D-E9DDC0E88274">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>260DF3D4-9DBF-384F-D6FF-94EF0C415FF4</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E0B0A9E3-3C05-7346-EA4D-6C612C7655DE" name="Pensum_PK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>EFF9CCD3-97D6-1F59-C65D-2BF0F21CD30A</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41CAD015-4994-EDE1-4AB9-3E84AB8FEAF2"/>
+<colUsage columnID="E4F4310E-4ED7-91F4-CC89-97A75D9B125E"/>
+<colUsage columnID="07B55B6A-E834-9411-2068-9F209C422FCE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26D782A1-2517-89E3-C796-49C1AB554A94" name="Pensum_Curso_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>C03303D3-1671-5AFC-042D-2B05C89310B3</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41CAD015-4994-EDE1-4AB9-3E84AB8FEAF2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DEBFC9A5-B8C5-2CD1-AA33-1B4ED95BB2DB" name="Pensum_Plan_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>D92D16BB-AA98-9D2F-469A-EF9DF2191216</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E4F4310E-4ED7-91F4-CC89-97A75D9B125E"/>
+<colUsage columnID="07B55B6A-E834-9411-2068-9F209C422FCE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

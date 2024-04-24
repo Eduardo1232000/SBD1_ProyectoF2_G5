@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="966EE456-0F1A-1EB5-D4C5-7EB6C0DEAFDD" name="Inscrito">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:37:20 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CodigoCarrera" id="287ADCEC-08AB-6AC1-8C53-364CFBED7EFB">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:43:51 UTC</createdTime>
+<generatorID>EBA2F977-8B8A-CA63-2102-D3998D3E63E5</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>BC987AF5-D026-7888-A092-409AF5CEB2D0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NoCarne" id="41806B80-8B16-74B4-8526-15D8FAA31E77">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:44:06 UTC</createdTime>
+<generatorID>928888BC-73A0-8F9A-F847-3A07F9D03DE4</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>ABFC4640-A3E7-519C-E79E-7B6250E31AFE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaInscripcion" id="3C70BAF9-FABA-45B3-4BF3-24D265AA71C2">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:37:30 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D68494C9-2ECC-3F31-2EA2-03E8784B7DF7" name="Inscrito PK">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:51:16 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>41806B80-8B16-74B4-8526-15D8FAA31E77</attributeRef>
+<attributeRef>287ADCEC-08AB-6AC1-8C53-364CFBED7EFB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

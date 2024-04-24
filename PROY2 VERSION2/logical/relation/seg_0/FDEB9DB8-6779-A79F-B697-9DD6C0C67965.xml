@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Horario salon FK" directorySegmentName="seg_0" id="FDEB9DB8-6779-A79F-B697-9DD6C0C67965">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 17:02:05 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>35AA861C-C247-3DA1-1E83-CD2153C6EBA4</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>81068FD6-F69D-5807-71A2-5E304924F9FB</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>1FF1DF19-2267-798E-3BB4-F839E9FE73BC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

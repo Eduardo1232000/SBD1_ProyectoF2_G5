@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Seccion Docente FK" directorySegmentName="seg_0" id="62524B80-D1BE-0C08-7248-E3879B575B51">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:56:31 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>FA7101AF-0C4E-3581-ED6D-65F930BB6D3E</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B95E11DF-8E10-FAA9-F854-584BF74792BD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3263C7A8-58CE-734A-CAE7-A0BB63563042</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

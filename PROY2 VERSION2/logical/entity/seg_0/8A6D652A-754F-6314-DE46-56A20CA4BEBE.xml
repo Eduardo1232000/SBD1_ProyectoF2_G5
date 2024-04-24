@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8A6D652A-754F-6314-DE46-56A20CA4BEBE" name="Asignacion">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:22:38 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NoCarne" id="F464BB66-8A7E-6047-4E05-069037F76E7C">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:53:33 UTC</createdTime>
+<generatorID>00B5FFB0-EBCC-7EE2-853D-81C65BDC9900</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>ABFC4640-A3E7-519C-E79E-7B6250E31AFE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodigoCurso" id="DCB519B3-5180-9513-7670-2FFAD56F0742">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:59:51 UTC</createdTime>
+<generatorID>9A033574-BC0A-7254-C225-B94C40597F1B</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>0E2DFAC5-FC4C-6F14-1A57-7B0F236D460C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Seccion" id="14C29265-DF88-5AB0-0ADC-FE42390AD607">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:59:29 UTC</createdTime>
+<generatorID>9A033574-BC0A-7254-C225-B94C40597F1B</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>7A7A0A3D-89A4-03D7-E982-7516AE9BA32D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Year" id="DD9FFEC6-EE02-2E64-8828-B626222E508C">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:59:29 UTC</createdTime>
+<generatorID>9A033574-BC0A-7254-C225-B94C40597F1B</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>EE7354B4-DBB4-2E1A-316A-899447D94DD9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Ciclo" id="A534F335-C7EA-9D85-7242-8CAD4489C777">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:59:56 UTC</createdTime>
+<generatorID>9A033574-BC0A-7254-C225-B94C40597F1B</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>3AC369B2-589D-4443-90F8-1781D9B46058</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Zona" id="7BEC5689-1D83-85D8-F22F-E661D6164876">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-06 02:03:16 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NotaExamenFinal" id="0923970D-5BB1-8841-7B5F-B7E9791E4071">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-06 02:03:29 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="identificador" id="D4432E05-BD03-E430-2A76-D49AEBB2F3AF">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 21:57:17 UTC</createdTime>
+<generatorID>9A033574-BC0A-7254-C225-B94C40597F1B</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>CC18F85C-6847-4BBF-3B98-CEF12DA95AB8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9A02F1E0-FE85-D3A2-A651-C6AD8D3B9D90" name="Asignacion PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 22:41:32 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F464BB66-8A7E-6047-4E05-069037F76E7C</attributeRef>
+<attributeRef>DCB519B3-5180-9513-7670-2FFAD56F0742</attributeRef>
+<attributeRef>14C29265-DF88-5AB0-0ADC-FE42390AD607</attributeRef>
+<attributeRef>DD9FFEC6-EE02-2E64-8828-B626222E508C</attributeRef>
+<attributeRef>A534F335-C7EA-9D85-7242-8CAD4489C777</attributeRef>
+<attributeRef>D4432E05-BD03-E430-2A76-D49AEBB2F3AF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

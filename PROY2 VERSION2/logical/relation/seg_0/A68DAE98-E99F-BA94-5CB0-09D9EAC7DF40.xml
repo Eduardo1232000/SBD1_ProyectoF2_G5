@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Horario Dia FK" directorySegmentName="seg_0" id="A68DAE98-E99F-BA94-5CB0-09D9EAC7DF40">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 17:01:40 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>EE1BCD94-8C6C-7272-EE16-114B5E851C8B</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>AE04285F-4BAB-0A5F-BF12-76CEAF47758D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1FF1DF19-2267-798E-3BB4-F839E9FE73BC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

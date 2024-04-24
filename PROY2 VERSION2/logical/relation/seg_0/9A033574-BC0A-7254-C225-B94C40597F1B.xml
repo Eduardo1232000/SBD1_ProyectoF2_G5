@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Asignacion Seccion FK" directorySegmentName="seg_0" id="9A033574-BC0A-7254-C225-B94C40597F1B">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:59:29 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>2D2FF93E-458E-F935-8E1D-89134E1A49C6</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3263C7A8-58CE-734A-CAE7-A0BB63563042</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8A6D652A-754F-6314-DE46-56A20CA4BEBE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

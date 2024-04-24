@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="02EEA46A-7813-9660-50C5-563F3365DC01" containerWithKeyObject="4EB8ED6C-1DF5-BC05-5D1C-550327C6B16B" localFKIndex="873B6FE7-A96B-DE79-F6BB-FA7768C8DBE5" name="CursoPrerrequisito_Pensum_FK">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 22:02:24 UTC</createdTime>
+<generatorID>48CBFE89-A92A-F931-02C4-2A9CA9E3DEC7</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<referredTableLongName>Pensum</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>94A0C4B5-3A86-A375-D19E-7CF5571EB33C</referredTableID>
+<keyObject>E0B0A9E3-3C05-7346-EA4D-6C612C7655DE</keyObject>
+<referredKeyID>E0B0A9E3-3C05-7346-EA4D-6C612C7655DE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Curso_CodigoCurso,Plan_Plan,Plan_CodigoCarrera</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

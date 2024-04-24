@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Horario Periodo FK" directorySegmentName="seg_0" id="6A74C434-C939-9C92-2F23-5A248B5B40C5">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 17:01:27 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>870767C6-9A01-FB02-F469-FD8539EF38E2</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6D6E0DFA-7DAD-57FC-452E-0C2309EDFB55</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1FF1DF19-2267-798E-3BB4-F839E9FE73BC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

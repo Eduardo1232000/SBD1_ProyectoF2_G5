@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3263C7A8-58CE-734A-CAE7-A0BB63563042" name="Seccion">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 22:43:37 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="identificador" id="CC18F85C-6847-4BBF-3B98-CEF12DA95AB8">
+<createdBy>pedro</createdBy>
+<createdTime>2024-04-22 20:54:08 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Seccion" id="7A7A0A3D-89A4-03D7-E982-7516AE9BA32D">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 22:45:32 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Year" id="EE7354B4-DBB4-2E1A-316A-899447D94DD9">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:54:43 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Ciclo" id="3AC369B2-589D-4443-90F8-1781D9B46058">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:54:59 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodigoCurso" id="0E2DFAC5-FC4C-6F14-1A57-7B0F236D460C">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:54:23 UTC</createdTime>
+<generatorID>6913FD4A-6871-630D-5C28-056F5ADD0917</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>6F33917F-006A-3EA6-2FF0-1D6D8ADF558D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodigoDocente" id="ADA52674-7CD0-3590-B978-F858CA2CF62F">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:56:31 UTC</createdTime>
+<generatorID>62524B80-D1BE-0C08-7248-E3879B575B51</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>A3A8F5EA-3B4C-2D88-DD21-AB65A554FC8A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2D2FF93E-458E-F935-8E1D-89134E1A49C6" name="Seccion PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 22:43:58 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7A7A0A3D-89A4-03D7-E982-7516AE9BA32D</attributeRef>
+<attributeRef>EE7354B4-DBB4-2E1A-316A-899447D94DD9</attributeRef>
+<attributeRef>0E2DFAC5-FC4C-6F14-1A57-7B0F236D460C</attributeRef>
+<attributeRef>3AC369B2-589D-4443-90F8-1781D9B46058</attributeRef>
+<attributeRef>CC18F85C-6847-4BBF-3B98-CEF12DA95AB8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="58C2F35B-D39B-75DF-DB05-FE40EF1547F8" name="Pensum">
+<createdBy>cutza</createdBy>
+<createdTime>2024-02-28 21:18:02 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CodigoCurso" id="4302EB63-8598-4689-2AB8-27A46F69AE7E">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:45:22 UTC</createdTime>
+<generatorID>C03303D3-1671-5AFC-042D-2B05C89310B3</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>6F33917F-006A-3EA6-2FF0-1D6D8ADF558D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Plan" id="3A014DD6-863B-4712-BEDF-9F63881B4C4C">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:45:45 UTC</createdTime>
+<generatorID>D92D16BB-AA98-9D2F-469A-EF9DF2191216</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>09F11513-E6BE-ECFC-DB39-A8F73BC50BB2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodigoCarrera" id="2F0C8F4E-4636-62D6-C9B0-8705181D5211">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:50:53 UTC</createdTime>
+<generatorID>D92D16BB-AA98-9D2F-469A-EF9DF2191216</generatorID>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<referedAttribute>BBF4F78F-BEA3-4964-812B-C08D7E09F1D4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Obligatorio" id="C218CDA8-DBD5-3803-61F6-A05B67EC3378">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-06 01:59:20 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Creditos" id="E7F72B78-E40C-ED01-7774-E4E590AC4C85">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-06 01:59:37 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NotaAprobacion" id="5919C4C3-B8C9-E470-1B56-60389D775131">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-06 01:59:58 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Zonaminima" id="97C3A4A5-479E-3F0C-59CE-220FE44A4460">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-06 02:00:10 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CreditosPrerrequisito" id="260DF3D4-9DBF-384F-D6FF-94EF0C415FF4">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-06 02:04:14 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EFF9CCD3-97D6-1F59-C65D-2BF0F21CD30A" name="Pensum PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-03-04 22:32:57 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4302EB63-8598-4689-2AB8-27A46F69AE7E</attributeRef>
+<attributeRef>3A014DD6-863B-4712-BEDF-9F63881B4C4C</attributeRef>
+<attributeRef>2F0C8F4E-4636-62D6-C9B0-8705181D5211</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Inscrito Estudiante FK" directorySegmentName="seg_0" id="928888BC-73A0-8F9A-F847-3A07F9D03DE4">
+<createdBy>Eduardo Reyes</createdBy>
+<createdTime>2024-04-11 16:44:06 UTC</createdTime>
+<ownerDesignName>PROY2 VERSION2</ownerDesignName>
+<engineerTo>
+<item key="06E72E09-317D-5FCF-79DA-D1774D6AAC31" value="true"/>
+</engineerTo>
+<sourcePk>ECAE1D60-C5E9-671E-112C-721F719AA999</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>919C1210-73E2-4CF4-F98E-9F75B0B0CAEA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>966EE456-0F1A-1EB5-D4C5-7EB6C0DEAFDD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
