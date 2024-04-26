@@ -13,22 +13,49 @@ La salida debe mostrar:
 ✓ Créditos necesarios
  */
 
-SELECT 
-    c.codigocurso AS "Código de Curso",
-    c.nombre AS "Nombre de Curso",
-    CASE
-        WHEN p.obligatorio = 'S' THEN 'Si'
-        ELSE 'No'
-    END AS "Obligatorio",
-    p.creditos AS "Créditos que otorga",
-    p.creditosprerrequisito AS "Créditos necesarios"
-FROM 
-    pensum p
-JOIN 
-    curso c ON p.codigocurso = c.codigocurso
-WHERE 
-    p.codigocarrera = 1; --aca se debe de modificar para colocar el codigo de la carrera
+CREATE OR REPLACE PROCEDURE ConsultarPensum (
+    codigo_carrera IN INTEGER
+)
+IS
+    v_carrera_existente INTEGER;
+BEGIN
+    -- Verificar si el código de carrera proporcionado existe en la tabla carrera
+    SELECT COUNT(*) INTO v_carrera_existente FROM carrera WHERE codigocarrera = codigo_carrera;
+
+    -- Si no se encuentra ninguna fila para el código de carrera, mostrar un mensaje de error
+    IF v_carrera_existente = 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Error: El código de carrera especificado no existe.');
+    ELSE
+        -- Consulta para obtener los detalles de los cursos pertenecientes a la carrera
+        FOR curso_info IN (
+            SELECT p.codigocurso,
+                   c.nombre AS nombre_curso,
+                   p.obligatorio,
+                   p.creditos AS creditos_otorga,
+                   p.creditosprerrequisito AS creditos_necesarios
+            FROM pensum p
+            JOIN curso c ON p.codigocurso = c.codigocurso
+            WHERE p.codigocarrera = codigo_carrera
+        )
+        LOOP
+            -- Mostrar los detalles de cada curso
+            DBMS_OUTPUT.PUT_LINE('Código de Curso: ' || curso_info.codigocurso);
+            DBMS_OUTPUT.PUT_LINE('Nombre de Curso: ' || curso_info.nombre_curso);
+            DBMS_OUTPUT.PUT_LINE('Obligatorio: ' || curso_info.obligatorio);
+            DBMS_OUTPUT.PUT_LINE('Créditos que otorga: ' || curso_info.creditos_otorga);
+            DBMS_OUTPUT.PUT_LINE('Créditos necesarios: ' || curso_info.creditos_necesarios);
+        END LOOP;
+    END IF;
+END;
     
+
+
+--prueba
+BEGIN
+    ConsultarPensum(:codigo_carrera);
+END;
+
+
 
 /*
 --consulta 2
@@ -139,66 +166,61 @@ La salida debe mostrar:
 */
 
 CREATE OR REPLACE PROCEDURE ConsultarAsignaciones (
-    p_codigo_curso IN NUMBER,
-    p_ano IN NUMBER,
-    p_ciclo IN VARCHAR2,
-    p_seccion IN VARCHAR2,
-    p_carnet OUT INTEGER,
-    p_nombre_completo OUT VARCHAR2
-) AS
-    v_cantidad_cursos INTEGER;
-    v_cantidad_secciones INTEGER;
+    codigo_curso IN INTEGER,
+    ciclo IN VARCHAR2,
+    año IN INTEGER,
+    seccion IN CHAR
+)
+IS
+    v_curso_existente INTEGER;
+    v_ciclo VARCHAR2(2);
+    v_seccion_existente INTEGER;
 BEGIN
-    -- Verificar si el curso especificado existe
-    SELECT COUNT(*)
-    INTO v_cantidad_cursos
-    FROM curso
-    WHERE codigocurso = p_codigo_curso;
 
-    -- Si el curso no existe, mostrar error
-    IF v_cantidad_cursos = 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'El curso especificado no existe.');
-    END IF;
-
-    -- Verificar si la sección del curso existe en el ciclo y año especificados
-    SELECT COUNT(*)
-    INTO v_cantidad_secciones
-    FROM horario
-    WHERE codigocurso = p_codigo_curso
-    AND year = TO_CHAR(p_ano)
-    AND ciclo = p_ciclo
-    AND seccion = p_seccion;
-	
-    IF validar_letra_mayuscula(seccion) = 0 THEN
-    	RAISE_APPLICATION_ERROR(-20002, 'La seccion debe ser mayuscula.');
-    END IF;
-   
-   
-    -- Si la sección no existe, mostrar error
-    IF v_cantidad_secciones = 0 THEN
-        RAISE_APPLICATION_ERROR(-20002, 'La sección especificada no existe para el curso en el ciclo y año especificados.');
+    SELECT COUNT(*) INTO v_curso_existente FROM curso WHERE codigocurso = codigo_curso;
+    IF v_curso_existente = 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Error: El código del curso especificado no existe.');
+        RETURN;
     END IF;
     
-    IF validar_ciclo(p_ciclo) = 0 THEN
-    	RAISE_APPLICATION_ERROR(-20002, 'Error, el ciclo no es valido.');
+    SELECT COUNT(*) INTO v_ciclo FROM asignacion WHERE ciclo = ciclo;
+    IF ciclo NOT IN ('1S', '2S', 'VJ', 'VD') THEN
+        DBMS_OUTPUT.PUT_LINE('Error: El valor del ciclo no es válido.');
+        RETURN;
     END IF;
 
-    -- Consulta para mostrar las asignaciones de estudiantes
-    SELECT 
-        a.nocarne,
-        e.nombres || ' ' || e.apellidos
-    INTO
-        p_carnet,
-        p_nombre_completo
-    FROM 
-        asignacion a
-    JOIN 
-        estudiante e ON a.nocarne = e.nocarne
-    WHERE 
-        a.codigocurso = p_codigo_curso
-        AND a.year = TO_CHAR(p_ano)
-        AND a.ciclo = p_ciclo
-        AND a.seccion = p_seccion;
+    SELECT COUNT(*) INTO v_seccion_existente FROM asignacion WHERE seccion = seccion;
+     IF seccion != UPPER(seccion) THEN
+        DBMS_OUTPUT.PUT_LINE('Error: La sección debe estar en mayúsculas.');
+        RETURN;
+    END IF;
+    
+    SELECT COUNT(*) INTO seccion_existente FROM seccion WHERE codigocurso = codigo_curso AND year = TO_CHAR(año) AND ciclo = ciclo AND seccion = seccion;
+
+    IF seccion_existente = 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Error: La sección especificada no existe para el curso en el ciclo y año dados.');
+    ELSE
+        FOR estudiante_info IN (
+            SELECT e.nocarne,
+                   e.nombres || ' ' || e.apellidos AS nombre_completo
+            FROM asignacion a
+            JOIN estudiante e ON a.nocarne = e.nocarne
+            WHERE a.codigocurso = codigo_curso
+              AND a.year = TO_CHAR(año)
+              AND a.ciclo = ciclo
+              AND a.seccion = seccion
+        )
+        LOOP
+            -- Mostrar la información del estudiante
+            DBMS_OUTPUT.PUT_LINE('Carnet: ' || estudiante_info.nocarne);
+            DBMS_OUTPUT.PUT_LINE('Nombre completo: ' || estudiante_info.nombre_completo);
+        END LOOP;
+    END IF;
+END;
+
+--prueba
+BEGIN
+    ConsultarAsignaciones(1, '1S', 2024, 'A');
 END;
 
 
@@ -388,92 +410,68 @@ Para la salida, si el curso tiene varios prerrequisitos se debe mostrar en difer
 
 
 CREATE OR REPLACE PROCEDURE ConsultarCursosAsignar (
-    p_carnet IN INTEGER,
-    p_ano IN VARCHAR2,
-    p_ciclo IN VARCHAR2,
-    p_cursor OUT SYS_REFCURSOR
-) AS
-    v_cantidad_estudiantes INTEGER;
+    carnet_estudiante IN INTEGER
+)
+IS
 BEGIN
     -- Verificar si el carnet del estudiante existe
-    SELECT COUNT(*)
-    INTO v_cantidad_estudiantes
-    FROM estudiante
-    WHERE nocarne = p_carnet;
-
-    -- Si el estudiante no existe, mostrar error
-    IF v_cantidad_estudiantes = 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'El carnet del estudiante no existe.');
-    END IF;
-
-    -- Abrir el cursor para los resultados
-    OPEN p_cursor FOR
-        SELECT 
-            c.codigocurso AS "Código de Curso",
-            c.nombre AS "Nombre del Curso",
-            p.creditos AS "Créditos que Otorga",
-            cr.codigocurso AS "Prerrequisito aprobado",
-            cp.nombre AS "Nombre Prerrequisito"
-        FROM 
-            curso c
-        JOIN 
-            cursoprerrequisito cr ON c.codigocurso = cr.codigocurso
-        JOIN 
-            curso cp ON cr.codigocurso_1 = cp.codigocurso
-        JOIN
-            pensum p ON c.codigocurso = p.codigocurso
-        LEFT JOIN 
-            (
-                SELECT 
-                    nocarne,
-                    codigocurso 
-                FROM 
-                    asignacion 
-                WHERE 
-                    year = p_ano 
-                    AND ciclo = p_ciclo
-            ) a ON c.codigocurso = a.codigocurso
-        LEFT JOIN 
-            estudiante e ON a.nocarne = e.nocarne
-        WHERE 
-            a.codigocurso IS NOT NULL
-            AND e.nocarne = p_carnet;
+    BEGIN
+        SELECT COUNT(*) INTO estudiante_existente FROM estudiante WHERE nocarne = carnet_estudiante;
+        IF estudiante_existente = 0 THEN
+            RAISE_APPLICATION_ERROR(-20001, 'Error: El carnet del estudiante especificado no existe.');
+        END IF;
+    -- Consultar los cursos y sus prerrequisitos
+    FOR curso_info IN (
+        SELECT p.codigocurso,
+               c.nombre AS nombre_curso,
+               p.creditos,
+               cp.codigocurso AS cod_prerrequisito,
+               cpr.nombre AS nombre_prerrequisito
+        FROM pensum p
+        JOIN curso c ON p.codigocurso = c.codigocurso
+        LEFT JOIN cursoprerrequisito cp ON p.codigocurso = cp.codigocurso
+        LEFT JOIN curso cpr ON cp.codigocurso_1 = cpr.codigocurso
+    )
+    LOOP
+        DECLARE
+            prerrequisito_aprobado INTEGER;
+        BEGIN
+            SELECT COUNT(*)
+            INTO prerrequisito_aprobado
+            FROM asignacion a
+            JOIN estudiante e ON a.nocarne = e.nocarne
+            WHERE e.nocarne = carnet_estudiante
+            AND a.codigocurso = curso_info.cod_prerrequisito
+            AND a.notaexamenfinal >= pensum.notaaprobacion;
+            
+            IF prerrequisito_aprobado = 0 AND pensum.obligatorio = 'S' THEN
+                CONTINUE;
+            END IF;
+        END;
+        -- Mostrar la información del curso y su prerrequisito (si existe)
+        IF curso_info.cod_prerrequisito IS NOT NULL THEN
+            DBMS_OUTPUT.PUT_LINE('Código de Curso: ' || curso_info.codigocurso);
+            DBMS_OUTPUT.PUT_LINE('Nombre del Curso: ' || curso_info.nombre_curso);
+            DBMS_OUTPUT.PUT_LINE('Créditos que Otorga: ' || curso_info.creditos);
+            DBMS_OUTPUT.PUT_LINE('Prerrequisito Aprobado: ' || curso_info.cod_prerrequisito);
+            DBMS_OUTPUT.PUT_LINE('Nombre del Prerrequisito: ' || curso_info.nombre_prerrequisito);
+            
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Código de Curso: ' || curso_info.codigocurso);
+            DBMS_OUTPUT.PUT_LINE('Nombre del Curso: ' || curso_info.nombre_curso);
+            DBMS_OUTPUT.PUT_LINE('Créditos que Otorga: ' || curso_info.creditos);
+            DBMS_OUTPUT.PUT_LINE('Prerrequisito Aprobado: N/A');
+            DBMS_OUTPUT.PUT_LINE('Nombre del Prerrequisito: N/A');
+        END IF;
+    END LOOP;
 END;
 
-   
-   
 
+--prueba
 
-SELECT 
-    c.codigocurso AS "Código de Curso",
-    c.nombre AS "Nombre del Curso",
-    p.creditos AS "Créditos que Otorga",
-    cr.codigocurso AS "Prerrequisito aprobado",
-    cp.nombre AS "Nombre Prerrequisito"
-FROM 
-    curso c
-JOIN 
-    cursoprerrequisito cr ON c.codigocurso = cr.codigocurso
-JOIN 
-    curso cp ON cr.codigocurso_1 = cp.codigocurso
-JOIN
-    pensum p ON c.codigocurso = p.codigocurso
-LEFT JOIN 
-    (
-        SELECT 
-            nocarne,
-            codigocurso 
-        FROM 
-            asignacion 
-        WHERE 
-            year = :ano 
-            AND ciclo = :ciclo
-    ) a ON c.codigocurso = a.codigocurso
-LEFT JOIN 
-    estudiante e ON a.nocarne = e.nocarne
-WHERE 
-    a.codigocurso IS NOT NULL
-    AND e.nocarne = :carnet;
+BEGIN
+    ConsultarCursosAsignar(1); 
+END;
 
 --consulta 8
 /*
