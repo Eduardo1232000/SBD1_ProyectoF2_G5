@@ -4,7 +4,7 @@ CREATE OR REPLACE PROCEDURE RegistrarEstudiante(
     p_nocarne INTEGER,
     p_nombres VARCHAR2,
     p_apellidos VARCHAR2,
-    p_ingresofamiliar NUMERIC,
+    -- p_ingresofamiliar NUMERIC,
     p_fechanacimiento VARCHAR2,
     p_correo VARCHAR2,
     p_telefono NUMERIC,
@@ -16,6 +16,8 @@ CREATE OR REPLACE PROCEDURE RegistrarEstudiante(
 IS 
     v_carrera_exist INTEGER;
     v_plan_exist INTEGER;
+    v_carnet_exist INTEGER;
+    v_plan_carrera INTEGER;
 BEGIN 
     -- VALIDAR QUE SOLO CONTENGA LETRAS NOMBRES
     IF validar_solo_letras(p_nombres) = 0 THEN
@@ -36,7 +38,13 @@ BEGIN
     IF validar_telefono(p_telefono) = 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'ERROR: El Telefono no tiene el formato correcto.');
     END IF;
-
+	
+   -- Validar que el existe el estudiante
+    SELECT COUNT(*) INTO v_carnet_exist FROM estudiante WHERE nocarne = p_nocarne;
+    IF v_carnet_exist > 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'ERROR: Ya existe un estudiante con ese carnet.');
+    END IF;
+   
     -- VALIDAR QUE LA CARERA EXISTA
     SELECT COUNT(*) INTO v_carrera_exist 
     FROM carrera WHERE CodigoCarrera = p_carrera;
@@ -50,16 +58,36 @@ BEGIN
     IF v_plan_exist = 0 THEN
         RAISE_APPLICATION_ERROR(-20003, 'ERROR: El plan no existe.');
     END IF;
+	
+   -- VALIDAR QUE EL PLAN PERTENECE A LA CARRERA
+ 	SELECT COUNT(*) INTO v_plan_carrera
+ 	FROM plan WHERE CODIGOCARRERA = p_carrera AND PLAN = p_plan;
+ 	IF v_plan_carrera = 0 THEN
+ 		RAISE_APPLICATION_ERROR(-20003, 'ERROR: El plan no pertenece a la carrera.');
+ 	END IF;
 
     -- INSERTAR EL ESTUDIANTE
     INSERT INTO estudiante (nocarne, nombres, apellidos, ingresofamiliar, fechanacimiento, correo, telefono, direccion, dpi_cui, creditos)
-    VALUES (p_nocarne, p_nombres, p_apellidos, p_ingresofamiliar, TO_DATE(p_fechanacimiento, 'DD-MM-YYYY'), p_correo, p_telefono, p_direccion, p_DPI_CUI, 0);
+    VALUES (p_nocarne, p_nombres, p_apellidos, 0, TO_DATE(p_fechanacimiento, 'YYYY-MM-DD'), p_correo, p_telefono, p_direccion, p_DPI_CUI, 0);
+    -- INSCRIBIR AL ESTUDIANTE EN LA CARRERA
+    INSERT INTO inscrito (codigocarrera, nocarne, fechainscripcion) VALUES (p_carrera, p_nocarne, TO_DATE(SYSDATE, 'YYYY-MM-DD'));    
     COMMIT;
 EXCEPTION
     WHEN OTHERS THEN
         ROLLBACK;
         RAISE;
 END RegistrarEstudiante;
+
+SELECT * FROM inscrito;
+
+
+
+
+
+
+
+
+
 
 --PRUEBAS 
 BEGIN
@@ -174,7 +202,7 @@ BEGIN
     
     -- INSERTAR EL NUEVO DOCENTE
     INSERT INTO docente (CodigoDocente, Nombres, Apellidos, SueldoMensual, FechaNacimiento, Correo, Telefono, Direccion, DPI_CUI) 
-    VALUES (p_codigo, p_Nombres, p_Apellidos, p_Salario, TO_DATE(p_Fecha_nac, 'DD-MM-YYYY'), p_Correo, p_Telefono, p_Direccion, p_DPI);
+    VALUES (p_codigo, p_Nombres, p_Apellidos, p_Salario, TO_DATE(p_Fecha_nac, 'YYYY-MM-DD'), p_Correo, p_Telefono, p_Direccion, p_DPI);
     COMMIT;
 EXCEPTION
     WHEN OTHERS THEN
@@ -344,10 +372,10 @@ select * from curso;
 Nota: segun el enunciado el ID de seccion deberia de ser autoincremental, pero no se puede hacer en este procedimiento porque el ID no existe como tal en la tabla para su insercion.
 */
 CREATE OR REPLACE PROCEDURE CrearSeccionCurso(
-    p_seccion VARCHAR2,
-    p_ciclo VARCHAR2,
-    p_codigo_curso INTEGER,
-    p_codigo_docente INTEGER
+	p_codigo_curso INTEGER,
+	p_ciclo VARCHAR2,
+	p_codigo_docente INTEGER,
+    p_seccion VARCHAR2
 )
 IS
     v_existencia_seccion INTEGER;
@@ -356,7 +384,7 @@ IS
     v_id_seccion INTEGER;
 BEGIN
     -- VALIDAR QUE LA SECCION NO EXISTA
-    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE seccion = p_seccion AND codigocurso = p_codigo_curso AND year = p_year AND ciclo = p_ciclo;
+    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE seccion = p_seccion AND codigocurso = p_codigo_curso AND year = 2024 AND ciclo = p_ciclo;
     IF v_existencia_seccion > 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'ERROR: La sección ya existe.');
     END IF;
@@ -388,7 +416,7 @@ BEGIN
 
     -- INSERTAR LA SECCION
     INSERT INTO seccion (identificador, seccion, year, ciclo, codigocurso, codigodocente)
-    VALUES (v_id_seccion, p_seccion, p_year, p_ciclo, p_codigo_curso, p_codigo_docente);
+    VALUES (v_id_seccion, p_seccion, 2024, p_ciclo, p_codigo_curso, p_codigo_docente);
     COMMIT;
 EXCEPTION
     WHEN OTHERS THEN
@@ -434,25 +462,30 @@ SELECT * FROM seccion;
 CREATE OR REPLACE PROCEDURE AgregarHorario(
     p_codigo_curso INTEGER,
     p_seccion VARCHAR2,
-    p_year VARCHAR2,
-    p_ciclo VARCHAR2,
+    -- p_year VARCHAR2,
+    -- p_ciclo VARCHAR2,
     p_codigo_periodo INTEGER,
     p_numero_dia INTEGER,
     p_edificio VARCHAR2,
-    p_salon VARCHAR2,
-    p_identificador_seccion INTEGER
+    p_salon VARCHAR2
+    -- p_identificador_seccion INTEGER
 )
 IS
     v_existencia_seccion INTEGER;
     v_existencia_periodo INTEGER;
     v_existencia_dia INTEGER;
     v_existencia_salon INTEGER;
+    v_year VARCHAR(4);
+    v_ciclo VARCHAR(3);
+    v_identificador_seccion INTEGER;
 BEGIN
     -- VALIDAR QUE LA SECCION EXISTA
-    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE codigocurso = p_codigo_curso AND seccion = p_seccion AND year = p_year AND ciclo = p_ciclo AND identificador = p_identificador_seccion;
+    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE codigocurso = p_codigo_curso AND seccion = p_seccion;
     IF v_existencia_seccion = 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'ERROR: La sección no existe.');
     END IF;
+    
+    SELECT year, ciclo, identificador INTO v_year, v_ciclo, v_identificador_seccion FROM seccion WHERE codigocurso = p_codigo_curso AND seccion = p_seccion;   
 
     -- VALIDAR QUE EL PERIODO EXISTA
     SELECT COUNT(*) INTO v_existencia_periodo FROM periodo WHERE codigoperiodo = p_codigo_periodo;
@@ -474,7 +507,7 @@ BEGIN
 
     -- INSERTAR EL HORARIO
     INSERT INTO horario (codigocurso, seccion, year, ciclo, codigoperiodo, numerodia, edificio, salon, identificador)
-    VALUES (p_codigo_curso, p_seccion, p_year, p_ciclo, p_codigo_periodo, p_numero_dia, p_edificio, p_salon, p_identificador_seccion);
+    VALUES (p_codigo_curso, p_seccion, v_year, v_ciclo, p_codigo_periodo, p_numero_dia, p_edificio, p_salon, v_identificador_seccion);
     COMMIT;
 EXCEPTION
     WHEN OTHERS THEN
@@ -516,8 +549,8 @@ SELECT * FROM seccion;
 --------------8 
 ----------Asignación Curso-----------------
 CREATE OR REPLACE PROCEDURE AsignarCurso(
-    p_codigo_seccion VARCHAR2,
-    p_carnet_estudiante INTEGER
+    p_codigo_seccion INTEGER,
+    p_carnet_estudiante INTEGER --carne
 )
 IS
     v_existencia_seccion INTEGER;
@@ -530,9 +563,12 @@ IS
     v_ciclo VARCHAR2(2);
     v_seccion VARCHAR2(10);
     v_codigo_curso INTEGER;
+    v_identificador_auto INTEGER;
+    v_existe_curso_prerrequisito INTEGER;
+    v_count INTEGER;
 BEGIN
     -- Verificar si la sección existe
-    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE seccion = p_codigo_seccion;
+    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE identificador = p_codigo_seccion;
     IF v_existencia_seccion = 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'ERROR: La sección especificada no existe.');
     END IF;
@@ -542,75 +578,114 @@ BEGIN
     IF v_existencia_estudiante = 0 THEN
         RAISE_APPLICATION_ERROR(-20002, 'ERROR: El estudiante especificado no existe.');
     END IF;
-
+   
     -- --asignar el codigo de curso
-    SELECT codigocurso INTO v_codigo_curso FROM seccion WHERE seccion = p_codigo_seccion;
+    SELECT codigocurso INTO v_codigo_curso FROM seccion WHERE identificador = p_codigo_seccion;
 
-    -- -- Verificar si el estudiante ya está asignado a esta sección de curso
-    -- SELECT COUNT(*) INTO v_existencia_asignacion FROM asignacion WHERE nocarne = p_carnet_estudiante AND seccion = p_codigo_seccion;
-    -- IF v_existencia_asignacion > 0 THEN
-    --     RAISE_APPLICATION_ERROR(-20003, 'ERROR: El estudiante ya está asignado a esta sección de curso.');
-    -- END IF;
+    -- Verificar si el estudiante ya está asignado a otra seccion con el mismo curso
+    SELECT COUNT(*) INTO v_existencia_asignacion FROM asignacion WHERE nocarne = p_carnet_estudiante AND codigocurso = v_codigo_curso;
+    IF v_existencia_asignacion > 0 THEN
+        RAISE_APPLICATION_ERROR(-20003, 'ERROR: El estudiante ya está asignado a otra sección.');
+    END IF;
 
-    -- -- Obtener el código de carrera del estudiante
-    -- SELECT codigocarrera INTO v_codigo_carrera FROM inscrito WHERE nocarne = p_carnet_estudiante;
     
-    -- -- Verificar si el curso corresponde a la carrera del estudiante
-    -- SELECT COUNT(*) INTO v_existencia_seccion FROM seccion
-    -- WHERE seccion = p_codigo_seccion AND
-    --       codigocurso IN (SELECT codigocurso FROM pensum WHERE codigocarrera = v_codigo_carrera) AND
-    --       seccion IN (SELECT seccion FROM seccion WHERE seccion = p_codigo_seccion) AND
-    --       year = TO_CHAR(SYSDATE, 'YYYY') AND
-    --       ciclo IN ('1S', '2S'); -- Considera todos los ciclos posibles
 
-    -- IF v_existencia_seccion = 0 THEN
-    --     RAISE_APPLICATION_ERROR(-20004, 'ERROR: El curso no corresponde a la carrera del estudiante.');
-    -- END IF;
+    -- Verificar que cuente con los créditos necesarios y que el curso corresponda a la carrera
+    SELECT creditos INTO v_creditos_actuales FROM estudiante WHERE nocarne = p_carnet_estudiante;
+    SELECT creditosprerrequisito INTO v_creditos_necesarios FROM pensum WHERE codigocurso = v_codigo_curso;
+ 
+    IF v_creditos_actuales < v_creditos_necesarios THEN
+        RAISE_APPLICATION_ERROR(-20005, 'ERROR: El estudiante no tiene los créditos necesarios para este curso.');
+    END IF;
 
-    -- -- Verificar si el estudiante tiene los créditos necesarios para este curso
-    -- SELECT creditosprerrequisito INTO v_creditos_necesarios
-    -- FROM pensum
-    -- WHERE codigocurso = v_codigo_curso
-    -- AND plan = (SELECT plan FROM inscrito WHERE nocarne = p_carnet_estudiante AND ROWNUM = 1); -- Si el estudiante está inscrito en más de una carrera, toma solo una
+    -- obtener la seccion del curso
+    SELECT seccion INTO v_seccion FROM seccion WHERE identificador = p_codigo_seccion;
 
-    -- SELECT NVL(SUM(creditos), 0) INTO v_creditos_actuales
-    -- FROM pensum
-    -- WHERE codigocurso IN (
-    --     SELECT codigocurso
-    --     FROM asignacion
-    --     WHERE nocarne = p_carnet_estudiante
-    -- );
-
-    -- IF v_creditos_actuales < v_creditos_necesarios THEN
-    --     RAISE_APPLICATION_ERROR(-20005, 'ERROR: El estudiante no tiene los créditos necesarios para este curso.');
-    -- END IF;
+    -- Obtener el código de carrera del estudiante
+    SELECT codigocarrera INTO v_codigo_carrera FROM inscrito WHERE nocarne = p_carnet_estudiante;
+    
+    -- Verificar si el curso corresponde a la carrera del estudiante
+    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion
+    WHERE identificador = p_codigo_seccion AND
+          codigocurso IN (SELECT codigocurso FROM pensum WHERE codigocarrera = v_codigo_carrera) AND
+          seccion IN (SELECT seccion FROM seccion WHERE identificador = p_codigo_seccion);
+    IF v_existencia_seccion = 0 THEN
+        RAISE_APPLICATION_ERROR(-20004, 'ERROR: El curso no corresponde a la carrera del estudiante.');
+    END IF;
 
     -- -- Obtener el año actual
-    -- v_year := TO_CHAR(SYSDATE, 'YYYY');
+    SELECT year INTO v_year FROM seccion WHERE identificador = p_codigo_seccion;
 
     -- -- Obtener el ciclo actual
-    -- IF TO_CHAR(SYSDATE, 'MM') IN ('01', '02', '03', '04', '05') THEN
-    --     v_ciclo := 'S1';
-    -- ELSIF TO_CHAR(SYSDATE, 'MM') = '06' THEN
-    --     v_ciclo := 'VJ';
-    -- ELSIF TO_CHAR(SYSDATE, 'MM') IN ('07', '08', '09', '10', '11') THEN
-    --     v_ciclo := 'S2';
-    -- ELSE
-    --     v_ciclo := 'VD';
-    -- END IF;
+    SELECT ciclo INTO v_ciclo FROM seccion WHERE identificador = p_codigo_seccion;
+   
+   -- VALIDAR GANO PRERREQUISITOS
+   
+   	FOR curso_info IN (
+	    SELECT p.codigocurso,
+	           p.obligatorio,
+	           p.notaaprobacion
+	    FROM cursoprerrequisito cpr
+	    INNER JOIN pensum p ON cpr.codigocurso_1 = p.codigocurso
+	    WHERE cpr.codigocurso = v_codigo_curso
+	)
+	LOOP
+		SELECT COUNT(*) INTO v_existencia_asignacion FROM asignacion
+		WHERE codigocurso = curso_info.codigocurso 
+	    AND nocarne = p_carnet_estudiante;
+	   
+	   	IF v_existencia_asignacion =0 THEN
+	        RAISE_APPLICATION_ERROR(-20001, 'No se ha aprobado un curso prerrequisito');
+	    END IF;
+	   
+	    -- Obtener la suma de zona y notaexamenfinal para el curso y estudiante
+	    SELECT (zona + notaexamenfinal) INTO v_existencia_seccion 
+	    FROM asignacion
+	    WHERE codigocurso = curso_info.codigocurso 
+	    AND nocarne = p_carnet_estudiante;
+	
+	    -- Verificar si la nota es menor que la nota de aprobación del prerrequisito
+	    IF v_existencia_seccion < curso_info.notaaprobacion THEN
+	        RAISE_APPLICATION_ERROR(-20001, 'No se ha aprobado un curso prerrequisito');
+	    END IF;
+	END LOOP;
+   
+   -- FIN VAL
 
-    -- -- Obtener la sección actual
-    -- SELECT seccion INTO v_seccion FROM asignacion WHERE nocarne = p_carnet_estudiante AND seccion = p_codigo_seccion;
-
-    -- -- Insertar la asignación del estudiante al curso
-    -- INSERT INTO asignacion (nocarne, codigocurso, seccion, year, ciclo, zona, notaexamenfinal)
-    -- VALUES (p_carnet_estudiante, p_codigo_seccion, v_seccion, v_year, v_ciclo, 0, 0); -- Se asume el ciclo actual y la zona y nota iniciales como cero
+    -- Insertar la asignación del estudiante al curso
+    INSERT INTO asignacion (nocarne, codigocurso, seccion, year, ciclo, zona, notaexamenfinal, identificador)
+    VALUES (p_carnet_estudiante, v_codigo_curso, v_seccion, v_year, v_ciclo, 0, 0, p_codigo_seccion); -- Se asume el ciclo actual y la zona y nota iniciales como cero
     
     COMMIT;
 EXCEPTION
     WHEN OTHERS THEN
         RAISE;
 END AsignarCurso;
+
+
+
+SELECT * FROM asignacion;
+SELECT * FROM seccion;
+
+
+
+
+
+
+
+--PRUEBAS
+BEGIN
+    AsignarCurso('A', 1);
+END;
+
+BEGIN --error seccion no existe
+    AsignarCurso('B', 1);
+END;
+BEGIN --error estudiante no existe
+    AsignarCurso('A', 2);
+END;
+
+SELECT * FROM estudiante;
 
 --PRUEBAS
 BEGIN
@@ -643,13 +718,13 @@ IS
     v_codigo_curso INTEGER;
 BEGIN
     -- Verificar si la sección existe
-    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE seccion = p_codigo_seccion;
+    SELECT COUNT(*) INTO v_existencia_seccion FROM seccion WHERE identificador = p_codigo_seccion;
     IF v_existencia_seccion = 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'ERROR: La sección especificada no existe.');
     END IF;
 
     -- Verificar si el estudiante está asignado a esta sección de curso
-    SELECT COUNT(*) INTO v_existencia_asignacion FROM asignacion WHERE nocarne = p_carnet_estudiante AND seccion = p_codigo_seccion;
+    SELECT COUNT(*) INTO v_existencia_asignacion FROM asignacion WHERE nocarne = p_carnet_estudiante AND identificador = p_codigo_seccion;
     IF v_existencia_asignacion = 0 THEN
         RAISE_APPLICATION_ERROR(-20002, 'ERROR: El estudiante no está asignado a esta sección de curso.');
     END IF;
@@ -664,7 +739,7 @@ BEGIN
     END IF;
 
     -- Obtener el código del curso
-    SELECT COUNT(*) INTO v_codigo_curso FROM asignacion WHERE nocarne = p_carnet_estudiante AND seccion = p_codigo_seccion;
+    SELECT codigocurso INTO v_codigo_curso FROM asignacion WHERE nocarne = p_carnet_estudiante AND identificador = p_codigo_seccion;
 
 
     -- Calcular la nota final y aplicar redondeo
@@ -672,9 +747,9 @@ BEGIN
 
     -- Actualizar la tabla asignación con la nota final y los valores de zona y examen final
     UPDATE asignacion
-    SET notaexamenfinal = v_nota_final,
+    SET notaexamenfinal = p_examen_final,
         zona = p_zona
-    WHERE nocarne = p_carnet_estudiante AND seccion = p_codigo_seccion;
+    WHERE nocarne = p_carnet_estudiante AND identificador = p_codigo_seccion;
 
     -- Si el estudiante pasó el curso, sumar los créditos
     IF v_nota_final >= 61 THEN

@@ -48,7 +48,7 @@ END;
 --insert
 
 CREATE OR REPLACE TRIGGER inscripcion_insert_trigger
-BEFORE INSERT ON inscripcion
+BEFORE INSERT ON inscrito
 FOR EACH ROW
 BEGIN
     INSERT INTO historial_transacciones (fecha_hora, descripcion, tipo)
@@ -59,7 +59,7 @@ END;
 
 
 CREATE OR REPLACE TRIGGER inscripcion_update_trigger
-BEFORE UPDATE ON inscripcion
+BEFORE UPDATE ON inscrito
 FOR EACH ROW
 BEGIN
     INSERT INTO historial_transacciones (fecha_hora, descripcion, tipo)
@@ -70,7 +70,7 @@ END;
 --delete
 
 CREATE OR REPLACE TRIGGER inscripcion_delete_trigger
-BEFORE DELETE ON inscripcion
+BEFORE DELETE ON inscrito
 FOR EACH ROW
 BEGIN
     INSERT INTO historial_transacciones (fecha_hora, descripcion, tipo)
@@ -91,7 +91,7 @@ END;
 
 --update
 
-CREATE OR REPLACE TRIGGER estudiante_insert_trigger
+CREATE OR REPLACE TRIGGER estudiante_update_trigger
 BEFORE UPDATE ON estudiante
 FOR EACH ROW
 BEGIN
@@ -121,7 +121,7 @@ BEGIN
     VALUES (SYSDATE, 'Se ha insertado un docente en la tabla Docente', 'Insert');
 END;
 --update
-CREATE OR REPLACE TRIGGER docente_insert_trigger
+CREATE OR REPLACE TRIGGER docente_update_trigger
 BEFORE UPDATE ON docente
 FOR EACH ROW
 BEGIN
@@ -149,7 +149,7 @@ BEGIN
     VALUES (SYSDATE, 'Se ha insertado un pensum en la tabla Pensum', 'Insert');
 END;
 --update
-CREATE OR REPLACE TRIGGER pensum_insert_trigger
+CREATE OR REPLACE TRIGGER pensum_update_trigger
 BEFORE UPDATE ON pensum
 FOR EACH ROW
 BEGIN

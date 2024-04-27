@@ -8,7 +8,6 @@ CREATE TABLE asignacion (
     notaexamenfinal INTEGER NOT NULL,
     identificador    INTEGER NOT NULL
 );
-
 ALTER TABLE asignacion
     ADD CONSTRAINT asignacion_pk PRIMARY KEY ( nocarne,
                                                codigocurso,
@@ -92,12 +91,6 @@ CREATE TABLE horario (
     identificador INTEGER NOT NULL
 );
 
-CREATE UNIQUE INDEX horario__idx ON
-    horario (
-        salon
-    ASC,
-        edificio
-    ASC );
 
 ALTER TABLE horario
     ADD CONSTRAINT horario_pk PRIMARY KEY ( numerodia,
@@ -263,3 +256,4 @@ ALTER TABLE seccion
 ALTER TABLE seccion
     ADD CONSTRAINT seccion_docente_fk FOREIGN KEY ( codigodocente )
         REFERENCES docente ( codigodocente );
+        
